@@ -13,9 +13,19 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
+		$client = new \Github\Client();
+		$repos = $client->api('repo')->find('symfony');
+		
+		echo "<pre>";
+		print_r($repos);
+		echo "</pre>";
+		exit;
+		
         return $this->render('default/index.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
         ]);
     }
+	
+	
+	
 }
