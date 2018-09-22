@@ -8,35 +8,31 @@
 		
             <div id="welcome">
                 <h1>
-					Symfony Repositories
+					<span>Symfony</span> Repositories
 				</h1>
             </div>
 			
             <div id="next">
-                <table style="text-align:left">
+                <table>
 					<tr>
 						<th>Sr. No.</th>
 						<th>Name</th>
 						<th>Description</th>
 					</tr>
-						{% set i = 1 %}
-						{% for repo in repos %}
-							{% for rp in repo %}							
-								<tr>
-									<td>{{ i }}</td>
-									<td>{{ rp.name }}</td>
-									<td>{{ rp.description }}</td>
-								</tr>
-							{% set i = i+1 %}
-						{% endfor %}
+					{% set i = 1 %}
+					{% for repo in repos %}					
+						<tr>
+							<td>{{ i }}</td>
+							<td>{{ repo.name }}</td>
+							<td>{{ repo.description }}</td>
+						</tr>
+						{% set i = i+1 %}
 					{% endfor %}
 				</table>
             </div>
 
         </div>
-		
     </div>
-	
 {% endblock %}
 
 {% block stylesheets %}

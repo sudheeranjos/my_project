@@ -16,16 +16,14 @@ class DefaultController extends Controller
 		$client = new \Github\Client();
 		$repos = $client->api('repo')->find('symfony');
 		
-		echo "<pre>";
+		/*echo "<pre>";
 		print_r($repos);
 		echo "</pre>";
-		exit;
+		exit;*/
 		
-        return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+        return $this->render('default/index.html.twig',[
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR, 'repos' => $repos
         ]);
     }
-	
-	
 	
 }
